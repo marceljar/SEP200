@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+//#pragma warning(disable:4996) // for Visual Studio
 
 typedef struct {
     char name[20];
