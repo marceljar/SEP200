@@ -16,15 +16,9 @@ void Student::edit(){
     std::cin >> first_name_;
     std::cout << "Enter the student's last name: " <<std::endl;
     std::cin >> last_name_;
-    while (true) {
-        std::cout << "Enter the student's GPA: " <<std::endl;
-        std::cin >> gpa_;
-        if (gpa_ <= 0 || gpa_ > 4) {
-           std::cout << "Please enter a valid GPA: " <<std::endl; 
-        } else {
-            break;
-        }
-    }
+    std::cout << "Enter the student's GPA: " <<std::endl;
+    std::cin >> gpa_;
+    
 }
 
 void Student::display(){
@@ -40,6 +34,8 @@ int main() {
 
     john_doe.edit();
     john_doe.display();
+
+    john_doe.gpa = 3.6; //error
     
     return 0;
 }
