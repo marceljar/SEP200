@@ -11,8 +11,8 @@ int main() {
     //display some famous constants
     std::cout << std::setprecision(4) << std::fixed << 
         "Pi with four decimal digits is: " << pi << std::endl;
-    std::cout << std::setprecision(5) << std::fixed << 
-        "Euler's number with five decimal digits is: " 
+    std::cout << std::setprecision(2) << std::scientific << 
+        "Euler's number in scientific notation with five decimal digits is: " 
         << e << std::endl;
     std::cout <<  std::defaultfloat << 
         "The golden ratio is: " << golden_ratio << std::endl;
@@ -23,8 +23,8 @@ int main() {
     std::cout << std::setprecision(4) << std::fixed << 
         "My number with four decimal digits is: " 
         << my_number << std::endl; 
-    std::cout << std::setprecision(5) << std::fixed << 
-        "My number with five decimal digits is: " 
+    std::cout << std::setprecision(5) << std::hexfloat << 
+        "My number with in hexfloat is: " 
         << my_number << std::endl;
     std::cout <<  std::defaultfloat << 
         "My number is: " << my_number << std::endl;
