@@ -8,7 +8,7 @@ void Student::edit() {
     std::cin >> last_name_;
     std::cout << "Enter the gpa: " <<std::endl;
     std::cin >> gpa_;
-};
+}
 
 void Student::display(){
     std::cout << "--------------------" << std::endl;
