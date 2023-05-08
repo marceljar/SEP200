@@ -1,4 +1,4 @@
-//application that showcases constructors
+//application that showcases this pointers
 #include <iostream>
 #include <string.h>
 //to allow for strcpy to work

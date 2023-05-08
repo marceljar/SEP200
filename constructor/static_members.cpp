@@ -1,4 +1,4 @@
-//application that showcases destructors
+//application that showcases static member variables
 #include <iostream>
 #include <string.h> //defines strcpy
 // uncomment to allow strcpy to work on Visual Studio
@@ -10,6 +10,7 @@ class Student{
         char last_name_[16];
         float gpa_;
     public:
+        static int num_students_;
         Student();
         ~Student();
         void edit();
@@ -17,6 +18,7 @@ class Student{
 };
 
 Student::Student(){
+    num_students_++;
     this->edit();
 }
 
@@ -26,8 +28,8 @@ Student::~Student(){
     strcpy(first_name_, first_name);
     strcpy(last_name_, last_name);
     gpa_ = 0;
+    num_students_--;
 }
-
 
 void Student::edit(){
     std::cout << "First name: " <<std::endl;
@@ -45,13 +47,17 @@ void Student::display(){
     std::cout << "gpa: " << gpa_ << std::endl;
 }
 
+int Student::num_students_ = 0;
+
 int main() {
     
-    Student student1;
+    Student student1, student2;
     
     student1.display(); 
-    student1.edit();
-    student1.display();
+    student1.display(); 
+
+    std::cout << "There are " << student1.num_students_ 
+       << " students in the system." << std::endl;
     
     return 0;
 }

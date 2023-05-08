@@ -1,9 +1,8 @@
 //application that showcases constructors
 #include <iostream>
-#include <string.h>
-//to allow for strcpy to work
-//#define _CRT_SECURE_NO_WARNINGS
-#pragma warning(disable:4996)
+#include <string.h> //defines strcpy
+// uncomment to allow strcpy to work on Visual Studio
+//#pragma warning(disable:4996)
 
 class Student{
     private:
@@ -28,19 +27,19 @@ Student::Student(char first_name[], char last_name[], float gpa){
 }
 
 void Student::edit(){
-    std::cout << "Enter the student's first name: " <<std::endl;
+    std::cout << "First name: " <<std::endl;
     std::cin >> first_name_;
-    std::cout << "Enter the student's last name: " <<std::endl;
+    std::cout << "Last name: " <<std::endl;
     std::cin >> last_name_;
-    std::cout << "Enter the student's gpa: " <<std::endl;
+    std::cout << "gpa: " <<std::endl;
     std::cin >> gpa_;
 }
 
 void Student::display(){
-    std::cout << "-------------------------" << std::endl;
-    std::cout << "Student's name: " << 
+    std::cout << "-----------------" << std::endl;
+    std::cout << "Name: " << 
         first_name_ << " " << last_name_ << std::endl;
-    std::cout << "Student's gpa: " << gpa_ << std::endl;
+    std::cout << "gpa: " << gpa_ << std::endl;
 }
 
 int main() {
