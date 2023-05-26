@@ -2,7 +2,7 @@
 
 class List {
 private:
-    int num_numbers_;
+    int size_;
     float* numbers_;
 public:
     List();
@@ -14,43 +14,43 @@ public:
 };
 
 List::List() {
-    num_numbers_ = 0;
+    size_ = 0;
     numbers_ = nullptr;
 }
 
-List::List(float* numbers, int num_numbers) {
-    numbers_ = new (std::nothrow) float[num_numbers];
+List::List(float* numbers, int size) {
+    numbers_ = new (std::nothrow) float[size];
     if (numbers_ == nullptr) {
         std::cout << "Could not allocate memory" << std::endl;
     }
     else {
-        for (int i = 0; i < num_numbers; i++) {
+        for (int i = 0; i < size; i++) {
             numbers_[i] = numbers[i];
         }
-        num_numbers_ = num_numbers;
+        size_ = size;
     }
 }
 
-bool List::new_list(float* numbers, int num_numbers) {
-    numbers_ = new (std::nothrow) float[num_numbers];
+bool List::new_list(float* numbers, int size) {
+    numbers_ = new (std::nothrow) float[size];
     if (numbers_ == nullptr) {
         std::cout << "Could not allocate memory" << std::endl;
         return false;
     }
     else {
-        for (int i = 0; i < num_numbers; i++) {
+        for (int i = 0; i < size; i++) {
             numbers_[i] = numbers[i];
         }
-        num_numbers_ = num_numbers;
+        size_ = size;
         return true;
     }
 }
 
 void List::display() {
-    for (int i = 0; i < num_numbers_ - 1; i++) {
+    for (int i = 0; i < size_ - 1; i++) {
         std::cout << numbers_[i] << ", ";
     }
-    std::cout << numbers_[num_numbers_ - 1] << std::endl;
+    std::cout << numbers_[size_ - 1] << std::endl;
 }
 
 void List::edit_list(float number, int position) {
@@ -59,17 +59,17 @@ void List::edit_list(float number, int position) {
 
 
 List& List::operator=(const List& list2) {
-   this->numbers_ = new (std::nothrow) float[list2.num_numbers_];
+   this->numbers_ = new (std::nothrow) float[list2.size_];
    if (numbers_ == nullptr) {
        std::cout << "Could not allocate memory" << std::endl;
        this->numbers_ = nullptr;
-       this->num_numbers_ = 0;
+       this->size_ = 0;
    }
    else {
-       for (int i = 0; i < list2.num_numbers_; i++) {
+       for (int i = 0; i < list2.size_; i++) {
            this->numbers_[i] = list2.numbers_[i];
        }
-       this->num_numbers_ = list2.num_numbers_;
+       this->size_ = list2.size_;
    }
    return *this;
 }
