@@ -20,30 +20,30 @@ List::List() {
     numbers_ = nullptr;
 }
 
-List::List(float* numbers, int num_numbers) {
-    numbers_ = new (std::nothrow) float[num_numbers];
+List::List(float* numbers, int size) {
+    numbers_ = new (std::nothrow) float[size];
     if (numbers_ == nullptr) {
         std::cout << "Could not allocate memory" << std::endl;
     }
     else {
-        for (int i = 0; i < num_numbers; i++) {
+        for (int i = 0; i < size; i++) {
             numbers_[i] = numbers[i];
         }
-        size_ = num_numbers;
+        size_ = size;
     }
 }
 
-bool List::new_list(float* numbers, int num_numbers) {
-    numbers_ = new (std::nothrow) float[num_numbers];
+bool List::new_list(float* numbers, int size) {
+    numbers_ = new (std::nothrow) float[size];
     if (numbers_ == nullptr) {
         std::cout << "Could not allocate memory" << std::endl;
         return false;
     }
     else {
-        for (int i = 0; i < num_numbers; i++) {
+        for (int i = 0; i < size; i++) {
             numbers_[i] = numbers[i];
         }
-        size_ = num_numbers;
+        size_ = size;
         return true;
     }
 }
