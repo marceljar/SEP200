@@ -54,7 +54,7 @@ int main() {
     Student student1, student2;
     
     student1.display(); 
-    student1.display(); 
+    student2.display(); 
 
     std::cout << "There are " << student1.num_students_ 
        << " students in the system." << std::endl;
