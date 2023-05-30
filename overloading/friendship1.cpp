@@ -1,4 +1,4 @@
-//code showcasing friendship
+//code showcasing friendship for operator overlaoding
 #include <iostream>
 
 class Complex{

@@ -6,7 +6,7 @@ int main()
 
     std::string first_name, last_name, full_name;
   
-    std::cout << "Enter first and last name separated by a space: ";
+    std::cout << "First and last name separated by a space: ";
     std::cin >> first_name;
     std::cin >> last_name;
   
