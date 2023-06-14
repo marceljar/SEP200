@@ -17,7 +17,7 @@ int main(){
     write_file.close();
 
     std::ifstream read_file;
-    read_file.open("test_var.txt", std::ios::out);
+    read_file.open("test_var.txt", std::ios::in);
     if (read_file.is_open()){
         int aux_int;
         float aux_float;
