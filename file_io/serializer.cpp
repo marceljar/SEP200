@@ -61,7 +61,7 @@ void List::edit_list(float number, int position) {
 
 void List::save_list(char file_name[]) {
     std::ofstream write_file;
-    write_file.open(file_name, std::ios::in);
+    write_file.open(file_name, std::ios::out);
     if (write_file.is_open()) {
         write_file << size_ << std::endl;
         //wrong! Simply saves a memory address
@@ -80,7 +80,7 @@ void List::save_list(char file_name[]) {
 
 void List::retrieve_list(char file_name[]) {
     std::ifstream read_file;
-    read_file.open(file_name, std::ios::out);
+    read_file.open(file_name, std::ios::in);
     if (read_file.is_open()) {
         read_file >> size_;
         numbers_ = new float[size_];
